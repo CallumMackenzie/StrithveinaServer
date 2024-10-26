@@ -2,6 +2,9 @@ use std::net::UdpSocket;
 
 use games::GamesManager;
 
+#[cfg(test)]
+mod tests;
+
 mod socket;
 mod world;
 mod user;
