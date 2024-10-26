@@ -2,5 +2,6 @@
 name = "strithveina-server"
 version = "0.1.0"
 edition = "2021"
+authors = ["Callum Mackenzie", "Eric George", "Jake Yeo"]
 
 [dependencies]
