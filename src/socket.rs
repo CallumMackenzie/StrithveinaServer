@@ -1,6 +1,6 @@
 use std::net::{SocketAddr, UdpSocket};
 
-
+/// Packet size
 const DYNAMIC_SOCKET_BUFFER_BYTES: usize = 32 * 32;
 
 /// A trait representing a game socket which data is sent/recieved from.
