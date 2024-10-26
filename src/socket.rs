@@ -10,6 +10,8 @@ pub trait GameSocket {
 	fn new(socket: UdpSocket) -> Self;
 	/// Recieves bytes and returns their size and the address they originated from.
 	fn recv_from(&mut self) -> std::io::Result<(usize, SocketAddr)>;
+	/// Peeks bytes in the queue without removing them.
+	fn peek_from(&mut self) -> std::io::Result<(usize, SocketAddr)>;
 }
 
 /// Dynamic UDP socket using a UdpSocket recieving packets from a client.
@@ -27,4 +29,9 @@ impl GameSocket for DynamicUDPSocket {
         let (amt, src) = self.socket.recv_from(&mut self.buffer)?;
         Ok((amt, src))
     }
+	
+	fn peek_from(&mut self) -> std::io::Result<(usize, SocketAddr)> {
+		let (amt, src) = self.socket.peek_from(&mut self.buffer)?;
+		Ok((amt, src))
+	}
 }
