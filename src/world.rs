@@ -94,19 +94,19 @@ fn ensure_proper_bit_collection_from_image_cell() {
         entity_spawn_info_index,
     } = get_data_from_image_cell(num);
 
-    println!("Original number: {:32b}", num);
-    println!(
-        "Extracted 7-bit part: {:7b}, compared to: {:7b}",
-        tile_type_index, real_parta
-    ); // Print in binary
-    println!(
-        "Extracted 18-bit part: {:18b}, compared to: {:18b}",
-        tile_instance_index, real_partb
-    ); // Print in binary
-    println!(
-        "Extracted 6-bit part: {:6b}, compared to: {:6b}",
-        entity_spawn_info_index, real_partc
-    ); // Print in binary
+    // println!("Original number: {:32b}", num);
+    // println!(
+    //     "Extracted 7-bit part: {:7b}, compared to: {:7b}",
+    //     tile_type_index, real_parta
+    // ); // Print in binary
+    // println!(
+    //     "Extracted 18-bit part: {:18b}, compared to: {:18b}",
+    //     tile_instance_index, real_partb
+    // ); // Print in binary
+    // println!(
+    //     "Extracted 6-bit part: {:6b}, compared to: {:6b}",
+    //     entity_spawn_info_index, real_partc
+    // ); // Print in binary
 
     assert_eq!(tile_type_index, real_parta);
     assert_eq!(tile_instance_index, real_partb as u32);
