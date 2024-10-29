@@ -1,5 +1,7 @@
 const WORLD_WIDTH: u32 = 2000;
 const WORLD_LENGTH: u32 = 2000;
+//base world size dimensions -> is necessary to determine image[] length
+
 const TILE_TYPE_BITS: u32 = 7;
 const TILE_INSTANCE_BITS: u32 = 18;
 const UNUSED_BITS: u32 = 1;
@@ -8,6 +10,8 @@ const ENTITY_SPAWN_INFO_BITS: u32 = 6;
 // | tile type 7-bits | tile instance 18-bits | unused 1-bit | entity spawn info 6-bits| = 32 bits
 //does it matter the size of the ints?
 
+///Tile struct containing the mapped part of entities, tile types, and specific instances
+/// data from the image[] is used to
 struct Tile {}
 
 struct World {
@@ -15,7 +19,7 @@ struct World {
     height: u32,
     // use vec or fixed array with constants at top?
     image: Vec<u32>,
-    tiles: Vec<u32>,
+    tiles: Vec<Tile>,
 }
 
 trait WorldGenerator {
