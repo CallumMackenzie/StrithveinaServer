@@ -26,24 +26,24 @@ fn ensure_proper_bit_collection_from_image_cell() {
     num = !num; // 0b01111100111111111111111101000000
     real_parta = 0b0111110;
     real_partb = 0b011111111111111110;
-    real_partc = 0b100000;
+    real_partc = 0b000000;
     let (parta, partb, partc) = get_data_from_image_cell(num);
 
-    // println!("Original number: {:32b}", num);
-    // println!(
-    //     "Extracted 7-bit part: {:7b}, compared to: {:7b}",
-    //     parta, real_parta
-    // ); // Print in binary
-    // println!(
-    //     "Extracted 18-bit part: {:18b}, compared to: {:18b}",
-    //     partb, real_partb
-    // ); // Print in binary
-    // println!(
-    //     "Extracted 6-bit part: {:6b}, compared to: {:6b}",
-    //     partc, real_partc
-    // ); // Print in binary
+    println!("Original number: {:32b}", num);
+    println!(
+        "Extracted 7-bit part: {:7b}, compared to: {:7b}",
+        parta, real_parta
+    ); // Print in binary
+    println!(
+        "Extracted 18-bit part: {:18b}, compared to: {:18b}",
+        partb, real_partb
+    ); // Print in binary
+    println!(
+        "Extracted 6-bit part: {:6b}, compared to: {:6b}",
+        partc, real_partc
+    ); // Print in binary
 
     assert_eq!(parta, real_parta);
-    // assert_eq!(partb, real_partb as u32);
-    // assert_eq!(partc, real_partc as u32);
+    assert_eq!(partb, real_partb as u32);
+    assert_eq!(partc, real_partc as u32);
 }
